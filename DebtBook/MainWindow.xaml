@@ -1,0 +1,50 @@
+﻿<Window x:Class="DebtBookAssignment.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DebtBookAssignment"
+        ResizeMode="NoResize"
+        Title="{Binding Path=Title}" 
+        Height="400" Width="380" >
+    <Window.Resources>
+
+        <DataTemplate x:Key="DebtorTemplate">
+            <WrapPanel>
+                <TextBlock Text="{Binding Path=¨Name}" Padding="5, 0" 
+                           Width="100"
+
+ 
+                           />
+                <TextBlock Text="{Binding Path=Value}" Padding="5, 0"
+                           Width="100"
+     
+                           />
+            </WrapPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <local:DebtBook x:Name="Debtors"/>
+    </Window.DataContext>
+    <DockPanel Name="dockPanelMain">
+
+        <Grid Name="DebtorGrid">
+
+
+            <DataGrid  ItemsSource="{Binding }" 
+                       IsSynchronizedWithCurrentItem="True"
+                       SelectedIndex="{Binding Path=CurrentIndex}"
+                       SelectedItem="{Binding Path=CurrentDebtor}"
+                       Name="dgridDebtors" 
+                       Margin="10,70,0,1.5"  
+                       CanUserAddRows="False" 
+                       CanUserDeleteRows="False" 
+                       IsReadOnly="True"
+                       MinRowHeight="12" HorizontalAlignment="Left" Width="187" 
+                       
+                       />
+            <Button x:Name="add_debtor_btn" Content="Add Debtor" HorizontalAlignment="Left" Margin="232,70,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddCommand}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" Text="Debtors:" VerticalAlignment="Top"/>
+            <Button x:Name="edit_debtor_btn" Content="edit_Debtor" HorizontalAlignment="Left" Margin="232,124,0,0" VerticalAlignment="Top" Width="75" Command="{Binding EditCommand}"/>
+        </Grid>
+    </DockPanel>
+</Window>
