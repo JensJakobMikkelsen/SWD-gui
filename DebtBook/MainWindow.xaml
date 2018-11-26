@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:DebtBookAssignment"
         ResizeMode="NoResize"
         Title="{Binding Path=Title}" 
-        Height="400" Width="791.137" >
+        Height="400" Width="419.258" >
     <Window.Resources>
 
         <DataTemplate x:Key="DebtorTemplate">
@@ -25,9 +25,13 @@
     <Window.DataContext>
         <local:DebtBook x:Name="Debtors"/>
     </Window.DataContext>
-    <DockPanel Name="dockPanelMain">
+    <DockPanel Name="dockPanelMain" Margin="0,0,26,-0.5">
 
-        <Grid Name="DebtorGrid">
+        <Grid Name="DebtorGrid" Margin="0,0,0,-0.5" Width="511">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="347*"/>
+                <ColumnDefinition Width="164*"/>
+            </Grid.ColumnDefinitions>
 
 
             <DataGrid  ItemsSource="{Binding }" AutoGenerateColumns="False" 
@@ -35,19 +39,27 @@
                        SelectedIndex="{Binding Path=CurrentIndex}"
                        SelectedItem="{Binding Path=CurrentDebtor}"
                        Name="dgridDebtors" 
-                       Margin="10,65,0,1.4"  
+                       Margin="10,65,0,1.5"  
                        CanUserAddRows="False" 
                        CanUserDeleteRows="False" 
                        IsReadOnly="True"
 
-                       MinRowHeight="12" HorizontalAlignment="Left" Width="306"
+                       MinRowHeight="12" HorizontalAlignment="Left" Width="250">
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Debt" Binding="{Binding Path=Value}" />
+                    <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" />
 
 
-                       
-                       />
-            <Button x:Name="add_debtor_btn" Content="Add Debtor" HorizontalAlignment="Left" Margin="473,68,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddCommand}"/>
+
+                </DataGrid.Columns>
+
+
+
+            </DataGrid>
+            <Button x:Name="add_debtor_btn" Content="Add Debtor" HorizontalAlignment="Left" Margin="297,68,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddCommand}" Grid.ColumnSpan="2"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" Text="Debtors:" VerticalAlignment="Top"/>
-            <Button x:Name="edit_debtor_btn" Content="edit_Debtor" HorizontalAlignment="Left" Margin="473,117,0,0" VerticalAlignment="Top" Width="75" Command="{Binding EditCommand}"/>
+            <Button x:Name="edit_debtor_btn" Content="edit_Debtor" HorizontalAlignment="Left" Margin="297,111,0,0" VerticalAlignment="Top" Width="75" Command="{Binding EditCommand}" Grid.ColumnSpan="2"/>
         </Grid>
     </DockPanel>
 </Window>
