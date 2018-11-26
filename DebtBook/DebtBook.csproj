@@ -64,7 +64,9 @@
     <Compile Include="EditDebtWindow.xaml.cs">
       <DependentUpon>EditDebtWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\EditedDBModelcs.cs" />
     <Compile Include="ViewModel\DBViewModel.cs" />
+    <Compile Include="ViewModel\EditedDBViewModelcs.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Page Include="AddDebtWindow.xaml">
       <SubType>Designer</SubType>

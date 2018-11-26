@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:DebtBookAssignment"
         ResizeMode="NoResize"
         Title="{Binding Path=Title}" 
-        Height="400" Width="380" >
+        Height="400" Width="791.137" >
     <Window.Resources>
 
         <DataTemplate x:Key="DebtorTemplate">
@@ -30,21 +30,24 @@
         <Grid Name="DebtorGrid">
 
 
-            <DataGrid  ItemsSource="{Binding }" 
+            <DataGrid  ItemsSource="{Binding }" AutoGenerateColumns="False" 
                        IsSynchronizedWithCurrentItem="True"
                        SelectedIndex="{Binding Path=CurrentIndex}"
                        SelectedItem="{Binding Path=CurrentDebtor}"
                        Name="dgridDebtors" 
-                       Margin="10,70,0,1.5"  
+                       Margin="10,65,0,1.4"  
                        CanUserAddRows="False" 
                        CanUserDeleteRows="False" 
                        IsReadOnly="True"
-                       MinRowHeight="12" HorizontalAlignment="Left" Width="187" 
+
+                       MinRowHeight="12" HorizontalAlignment="Left" Width="306"
+
+
                        
                        />
-            <Button x:Name="add_debtor_btn" Content="Add Debtor" HorizontalAlignment="Left" Margin="232,70,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddCommand}"/>
+            <Button x:Name="add_debtor_btn" Content="Add Debtor" HorizontalAlignment="Left" Margin="473,68,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddCommand}"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" Text="Debtors:" VerticalAlignment="Top"/>
-            <Button x:Name="edit_debtor_btn" Content="edit_Debtor" HorizontalAlignment="Left" Margin="232,124,0,0" VerticalAlignment="Top" Width="75" Command="{Binding EditCommand}"/>
+            <Button x:Name="edit_debtor_btn" Content="edit_Debtor" HorizontalAlignment="Left" Margin="473,117,0,0" VerticalAlignment="Top" Width="75" Command="{Binding EditCommand}"/>
         </Grid>
     </DockPanel>
 </Window>

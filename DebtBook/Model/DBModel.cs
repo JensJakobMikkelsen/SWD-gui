@@ -11,15 +11,44 @@ namespace DebtBookAssignment
     
     public class DBModel : INotifyPropertyChanged
     {
+        public List<string> editedValues;
+
+
+        public List<string> EditedValues
+        {
+            get
+            {
+                return editedValues;
+            }
+            set
+            {
+                if (editedValues != value)
+                {
+                    editedValues = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+
+        public void addToEdited(string value)
+        {
+            editedValues.Add(value);
+        }
+
+
+
         string _value;
         string _name;
 
         public DBModel()
         {
+            editedValues = new List<string>();
         }
 
         public DBModel(string value, string aName)
         {
+            editedValues = new List<string>();
             _value = value;
             _name = aName;
         }
@@ -55,6 +84,8 @@ namespace DebtBookAssignment
                 }
             }
         }
+
+
 
         #region INotifyPropertyChanged implementation
 

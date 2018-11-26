@@ -76,7 +76,6 @@ C:\Users\Bruger\Downloads\winrar\SWD-GUI-group9\DebtBook\obj\x86\Debug\EditDebtW
 C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\bin\Debug\Lab4.exe.config
 C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\bin\Debug\Lab4.exe
 C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\bin\Debug\Lab4.pdb
-C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\obj\x86\Debug\DebtBook.csprojAssemblyReference.cache
 C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\obj\x86\Debug\AddDebtWindow.g.cs
 C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\obj\x86\Debug\EditDebtWindow.g.cs
 C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\obj\x86\Debug\MainWindow.g.cs
@@ -93,3 +92,4 @@ C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\obj\x86\Debug\DebtBook.csp
 C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\obj\x86\Debug\DebtBook.csproj.CoreCompileInputs.cache
 C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\obj\x86\Debug\Lab4.exe
 C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\obj\x86\Debug\Lab4.pdb
+C:\Users\Bruger\Downloads\SWD\SWD-GUI-group9\DebtBook\obj\x86\Debug\DebtBook.csprojAssemblyReference.cache

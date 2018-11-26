@@ -17,16 +17,21 @@ using Microsoft.Win32;
 
 namespace DebtBookAssignment
 {
-    
+
+   
     public class DebtBook : ObservableCollection<DBModel>, INotifyPropertyChanged
     {
         const string AppTitle = "DebtBook, Group 9";
         bool dirty = false;
 
+
         public DebtBook()
         {
+
+        
             if ((bool)(DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof(DependencyObject)).DefaultValue))
             {
+
                 // In Design mode
                 Add(new DBModel("30", "Mike"));
                 Add(new DBModel("-10", "Jenzz"));
@@ -55,9 +60,11 @@ namespace DebtBookAssignment
             {
                 Add(newDebtor);
 
+                newDebtor.addToEdited(newDebtor.Value);
                 CurrentDebtor = newDebtor;
                 dirty = true;
             }
+
         }
 
         ICommand _editCommand;
@@ -75,6 +82,8 @@ namespace DebtBookAssignment
             DBModel tempDebtor = new DBModel();
             tempDebtor.Value = CurrentDebtor.Value;
             tempDebtor.Name = currentDebtor.Name;
+            tempDebtor.editedValues = currentDebtor.editedValues;
+
             dlg.DataContext = tempDebtor;
             if (dlg.ShowDialog() == true)
             {
@@ -94,11 +103,13 @@ namespace DebtBookAssignment
 
                 CurrentDebtor.Value = final;
                 currentDebtor.Name = tempDebtor.Name;
+                currentDebtor.addToEdited(temp_price);
+
                 dirty = true;
             }
+
         }
 
-    
 
         ICommand _deleteCommand;
         public ICommand DeleteCommand
